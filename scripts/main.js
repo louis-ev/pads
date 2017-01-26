@@ -10,7 +10,7 @@ document.write = function (str) {
     ;
 
   var container = document.getElementById("content");
-  $(container).html(str);
+  document.old_write(str);
 
   $(container).find('a').each(function() {
     var href = $(this).attr('href');
@@ -25,7 +25,7 @@ document.write = function (str) {
       $(this).parent().html(youtubeIframe);
     }
   });
-
+//   $(container).find('p:empty').html('<br>');
 };
 
 
