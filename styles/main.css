@@ -13,8 +13,8 @@ body {
   padding: 0;
   font-family:  'Fira Mono', monospace;
   font-weight: 400;
-  font-size: 105%;
-  line-height: 1.4;
+  font-size: 110%;
+  line-height: 1.5;
 }
 
 a {
@@ -23,6 +23,11 @@ a {
 }
 a:hover {
   color: #FF3E51;
+}
+u {
+  text-decoration: none;
+  color: #FF3E51;
+  font-size: 1.2rem;
 }
 
 /************************************************************************
@@ -160,6 +165,7 @@ img {
   width: 100%;
   height: auto;
   border: 4px solid #ddd;
+  background-color: #ddd;
 }
 
 h1 {
@@ -170,23 +176,28 @@ h1 {
 
 h2 {
   position: relative;
-  font-size:  3rem;
+  font-size:  4rem;
   text-transform: lowercase;
-  margin-top:   0;
-  margin-bottom: 1rem;
-  border-top: 4px solid #353535;
+  margin-top:   2rem;
+  margin-bottom: 2rem;
+  min-height: 12rem;
+
+  padding-left: 1.5rem;
 }
 
 h2::before {
   counter-increment: h2;
-  content: counter(h2) ". ";
+  content: counter(h2);
   position: absolute;
   right: 100%;
-
   font-family: 'Fira Mono';
   font-size:  12rem;
   line-height:  1;
+
+  border-right: 1.5rem solid currentcolor;
+  padding-right:  1.5rem;
 }
+
 
 b {
   color: #FF3E51;
