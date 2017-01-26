@@ -1,0 +1,187 @@
+@import "../fonts/Fira/fira.css";
+
+
+* {
+  box-sizing: border-box;
+  text-rendering: optimizelegibility;
+}
+
+body {
+  background-color: #fafafa;
+  color: #222;
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 18px;
+  line-height: 145%;
+}
+
+p {
+  line-height: 160%;
+  font-size: 100%;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+h3 {
+  margin-bottom: 0;
+}
+
+
+
+/************************************************************************
+                      LAYOUT STYLES
+************************************************************************/
+
+header {
+  font-family:  'Fira Mono';
+  font-size:  .8em;
+}
+header .path {
+  max-width: 50rem;
+  padding: 1rem;
+  margin: 0 auto;
+
+}
+
+header a + a::before {
+  content: '•';
+}
+
+/************************************************************************
+                      DROPDOWN NAVIGATION
+************************************************************************/
+
+nav {
+  position: relative;
+  width:320px;
+  max-width: 50rem;
+  margin: 1rem auto;
+}
+
+
+select {
+  display: inline-block;
+  width: 100%;
+
+  border:none;
+  border: 4px solid #353535;
+  margin: 0;
+  padding: .5rem 1rem;
+
+  font-family: 'Fira Mono';
+  font-size: 2rem;
+  line-height: 1.2;
+
+  outline:none; /* remove focus ring from Webkit */
+
+  color: white;
+  background: #353535;
+
+  -webkit-appearance:none; /* remove the strong OSX influence from Webkit */
+}
+
+/* Select arrow styling */
+nav::after {
+  content: "▼";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 60%;
+  line-height: 65px;
+  padding: 0 10px;
+  color: #FF3E51;
+  color: white;
+
+  pointer-events:none;
+}
+
+
+/************************************************************************
+                      EDIT BUTTON
+************************************************************************/
+
+
+
+
+.button {
+  display: block;
+  width: 54px;
+  height: 54px;
+
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+
+  background-color: #FF3E51;
+  border-radius: 50%;
+  color: white;
+}
+
+
+.svg-icon {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+}
+
+.svg-icon path {
+  fill: white;
+}
+
+/************************************************************************
+                      SECTION (content)
+************************************************************************/
+
+section {
+  max-width: 50rem;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+hr { width: 40%; max-width: 16em; margin: 4em auto; }
+
+ul.code {
+  list-style:none;
+  background-color: #eee;
+  border: 2px solid #d9d9d9;
+  padding:1rem;
+}
+
+ul.code li {
+  font-family: 'Fira Mono';
+  font-size:1.1em;
+}
+
+.iframeContainer {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 66%;
+  overflow: hidden;
+}
+.iframeContainer iframe {
+  width:100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+ul.comment {
+  list-style: none;
+  color: #FF3E51;
+  padding: 0 1rem;
+  margin: 0rem;
+  border-left: 3px solid #FF3E51;
+}
