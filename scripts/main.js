@@ -41,8 +41,7 @@ function makeCodepenIframeFromLink(href) {
 
   if(href.indexOf('/embed/') === -1)
     return false;
-
-  return '<div class="iframeContainer"><iframe src="' + href + '"></iframe></div>';
+  return '<div class="iframeContainer"><iframe src="' + href + '?height=512&theme-id=0&default-tab=html,result&embed-version=2" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" ></iframe></div>';
 }
 
 function makeYoutubeIframeFromLink(href) {
