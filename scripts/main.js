@@ -18,12 +18,20 @@ document.write = function (str) {
     var codependIframe = makeCodepenIframeFromLink(href);
     if(codependIframe) {
       $(this).parent().html(codependIframe);
+      return;
     }
 
     var youtubeIframe = makeYoutubeIframeFromLink(href);
     if(youtubeIframe) {
       $(this).parent().html(youtubeIframe);
+      return;
     }
+  });
+
+  $(container).find('img').each(function() {
+    // wrap all images in links and target blank
+    var imgUrl = $(this).attr('src');
+    $(this).wrap('<a href="' + imgUrl  + '" target="_blank">');
   });
 //   $(container).find('p:empty').html('<br>');
 };
