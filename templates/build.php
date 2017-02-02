@@ -5,7 +5,9 @@
     $allPages = array(
       'index' => 'Home',
       'web-basics' => '1. Web Basics',
-      'formatting' => '- formatting'
+      'web-layout' => '2. Web Layout',
+      'references' => 'References',
+      'formatting' => '- formatting',
     );
   ?>
 
