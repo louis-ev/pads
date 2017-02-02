@@ -13,7 +13,7 @@
 
   <?php require('snippets/head.php'); ?>
 
-<body>
+<body class="page-<?= $currentPage; ?>">
 
   <?php require('snippets/header.php'); ?>
   <?php require('snippets/menu.php'); ?>
