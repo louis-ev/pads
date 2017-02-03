@@ -258,7 +258,7 @@ ul.comment {
 
 
 /************************************************************************
-                      SECTION (content)
+                      SIDE-NAVIGATION
 ************************************************************************/
 
 
@@ -278,7 +278,7 @@ ul.comment {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  transition: color .5s ease-out;
+  transition: color .15s ease;
 }
 
 .scroll-nav__heading {
@@ -295,7 +295,7 @@ ul.comment {
 }
 .scroll-nav__list {
   margin: 5px;
-  padding: 5px;
+  padding: 10px 15px;
 }
 
 .scroll-nav__item {
@@ -305,24 +305,26 @@ ul.comment {
   color: #4691f6;
 }
 .scroll-nav__item a:hover {
-  color: #4691f6;
+  color: #FF3E51;
 }
 
 .scroll-nav__sub-list {
   margin: 0;
+  padding-left:   1rem;
   list-style: none;
-  padding-left: 1em;
 }
 
 
 .scroll-nav__sub-item {
   margin: 0;
+  padding-left: 1em;
 }
-.scroll-nav__sub-item:hover > a {
-  color: #4691f6;
-}
+
 .scroll-nav__sub-item.active > a {
   color: #4691f6;
+}
+.scroll-nav__sub-item:hover > a {
+  color: #FF3E51;
 }
 
 .scroll-nav__link, .scroll-nav__sub-link {
@@ -360,10 +362,21 @@ ul.comment {
 
 }
 
-@media screen and (min-width: 60em) and (max-width: 85em) {
+@media screen and (min-width: 60em) and (max-width: 90em) {
 
   .scroll-nav:not(:hover) .scroll-nav__wrapper {
     width:150px;
   }
 
 }
+
+
+/************************************************************************
+                      CUSTOM TEMPLATES
+************************************************************************/
+
+.page-references {
+
+
+}
+
