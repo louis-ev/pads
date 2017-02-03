@@ -42,6 +42,10 @@ document.write = function (str) {
     $(this).wrap('<a href="' + imgUrl  + '" target="_blank">');
   });
 
+  $container.find('a').each(function() {
+    $(this).attr('target', '_blank');
+  });
+
   $container.waitForImages(function() {
     console.log('All images have loaded');
     $container.scrollNav({
@@ -90,7 +94,7 @@ function makeYoutubeIframeFromLink(href) {
     var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
     var match = url.match(regExp);
 
-    if (match && match[2].length == 11) {
+    if((url.indexOf('youtube') > -1 || url.indexOf('youtu.be') > -1) && match && match[2].length == 11) {
       return match[2];
     } else {
       return 'error';
