@@ -4,12 +4,17 @@ document.old_write = document.write;
 // intercept hackpad write
 document.write = function (str) {
 
+  var index = -1;
   // replace <undefined><li> with <h3> and </li></undefined> with </h3>
   str = str
     .replace(/<undefined><li>/g, '<h3>')
     .replace(/<\/li><\/undefined>/g, '</h3>')
     .replace(/&rsquo;/g, '\'')
     .replace(/--&gt;/g, '→')
+    .replace(/\`/gi, function() {
+      index++;
+      return index % 2 == 0 ? '<span class="text-pre">' : '</span>';
+    }, 'gi')
     ;
 
   document.old_write(str);
@@ -46,6 +51,8 @@ document.write = function (str) {
     $(this).attr('target', '_blank');
   });
 
+  $container.find('.comment').remove();
+
   $container.waitForImages(function() {
     console.log('All images have loaded');
     $container.scrollNav({
@@ -70,7 +77,6 @@ document.write = function (str) {
     });
   });
 
-  //   $(container).find('p:empty').html('<br>');
 };
 
 
@@ -84,9 +90,17 @@ function makeCodepenIframeFromLink(href) {
     href = href.replace(/\/pen\//g, '/embed/');
   }
 
+  var defaultTabs = 'html,result';
+
+  if(href.indexOf('?') > 0) {
+    defaultTabs = href.substr(href.indexOf('?')+1);
+    href = href.substr(0, href.indexOf('?'));
+  }
+
+
   if(href.indexOf('/embed/') === -1)
     return false;
-  return '<div class="iframeContainer"><iframe src="' + href + '?height=512&theme-id=0&default-tab=html,result&embed-version=2" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" ></iframe></div>';
+  return '<div class="iframeContainer"><iframe src="' + href + '?height=512&theme-id=0&default-tab=' + defaultTabs + '&embed-version=2" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" ></iframe></div>';
 }
 
 function makeYoutubeIframeFromLink(href) {
