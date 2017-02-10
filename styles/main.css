@@ -13,7 +13,7 @@ body {
   padding: 0;
   font-family:  'Fira Mono', monospace;
   font-weight: 400;
-  font-size: 110%;
+  font-size: 105%;
   line-height: 1.5;
 }
 
@@ -99,9 +99,6 @@ nav.topNav::after {
                       EDIT BUTTON
 ************************************************************************/
 
-
-
-
 .button {
   display: block;
   width: 54px;
@@ -140,8 +137,8 @@ section {
 }
 
 #content {
-  max-width: 50rem;
-  padding: 1rem;
+  max-width: 55rem;
+  padding: 1rem 3rem;
   margin: 0 auto 8rem;
   counter-reset: h2;
 }
@@ -153,9 +150,14 @@ p, ul, ol {
   font-family: 'Fira Sans', sans-serif;
 }
 
-p, ul, ol, li {
-  margin-top: 1rem;
-  margin-bottom:  1rem;
+p, ul, ol {
+  margin-top: 1.5rem;
+  margin-bottom:  1.5rem;
+}
+
+li {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
 }
 
 p:empty {
@@ -165,8 +167,8 @@ p:empty {
 img {
   display: block;
   max-width: 100%;
-  width: 100%;
   height: auto;
+  margin:0 auto;
   border: 4px solid #ddd;
   background-color: #ddd;
 }
@@ -221,14 +223,16 @@ hr { width: 40%; max-width: 16em; margin: 4em auto; }
 ul.code {
   list-style:none;
   background-color: #eee;
-  border: 2px solid #d9d9d9;
-  border-radius: 2px;
+  border: none;
+  border-left: 6px solid #4BC0B4;
+  border-radius: 3px;
+  font-size: 1rem;
+  color: #333;
   padding:1rem;
 }
 
 ul.code li {
   font-family: 'Fira Mono';
-  font-size:.80em;
   margin: 0;
 }
 
@@ -247,6 +251,7 @@ ul.code li {
   height: 100%;
 }
 
+/* comments are only on the hackpad page (removed in JS) */
 ul.comment {
   list-style: none;
   color: #FF3E51;
@@ -255,6 +260,12 @@ ul.comment {
   border-left: 3px solid #FF3E51;
 }
 
+.text-pre {
+  font-family: 'Fira Mono';
+  color: #4BC0B4;
+  background-color: #eee;
+  border-radius: 3px;
+}
 
 
 /************************************************************************
@@ -278,7 +289,7 @@ ul.comment {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  transition: color .15s ease;
+  transition: color .3s ease;
 }
 
 .scroll-nav__heading {
@@ -343,7 +354,7 @@ ul.comment {
   }
 
   .scroll-nav.fixed .scroll-nav__wrapper:not(:hover) {
-    color: #666;
+    color: #999;
   }
 
   .scroll-nav.fixed .scroll-nav__wrapper {
