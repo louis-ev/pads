@@ -53,6 +53,29 @@ document.write = function (str) {
 
   $container.find('.comment').remove();
 
+  // convert ul.code to <pre><code>
+  $container.find('ul.code').each(function() {
+    var codeBloc = '';
+    $(this).find('li').each(function() {
+      codeBloc += $(this).text() + '\n';
+    });
+
+    var blocType = 'lang-html';
+    // detect (very vaguely) the langage
+    if(codeBloc.indexOf('{') > -1 && codeBloc.indexOf('}') -1) {
+      blocType = 'lang-css';
+    } else if(codeBloc.indexOf('var') > -1) {
+      blocType = 'lang-js';
+    }
+
+    $(this)
+      .replaceWith('<pre><code class="' + blocType + '">' + escapeHtml(codeBloc) + '</code></pre>')
+      ;
+  });
+  $container.find('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+
   $container.waitForImages(function() {
     console.log('All images have loaded');
     $container.scrollNav({
@@ -134,6 +157,19 @@ function makeVimeoIframeFromLink(href) {
   return '<div class="iframeContainer"><iframe src="https://player.vimeo.com/video/' + myId + '" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>';
 }
 
-$("document").ready( function() {
+var entityMap = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#39;',
+  '/': '&#x2F;',
+  '`': '&#x60;',
+  '=': '&#x3D;'
+};
 
-});
+function escapeHtml(string) {
+  return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+    return entityMap[s];
+  });
+}
