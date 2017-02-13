@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>PCA spring 2017 / the fabric of the web</title>
+	<title><?= $allPages[$currentPage] ?> | PCA spring 2017 | the fabric of the web</title>
 
 	<meta name="keywords" content="">
 	<meta name="description" content="">
