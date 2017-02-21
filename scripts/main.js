@@ -10,7 +10,7 @@ document.write = function (str) {
     .replace(/<undefined><li>/g, '<h3>')
     .replace(/<\/li><\/undefined>/g, '</h3>')
     .replace(/&rsquo;/g, '\'')
-    .replace(/--&gt;/g, '→')
+//     .replace(/--&gt;/g, '→')
     .replace(/\`/gi, function() {
       index++;
       return index % 2 == 0 ? '<span class="text-pre">' : '</span>';

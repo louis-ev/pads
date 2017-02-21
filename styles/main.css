@@ -15,12 +15,12 @@
 
 body {
   background-color: #fafafa;
-  color: #222;
+  color: #444;
   margin: 0 auto;
   padding: 0;
   font-family:  'Fira Mono', monospace;
   font-weight: 400;
-  font-size: 105%;
+  font-size: 125%;
   line-height: 1.5;
 }
 
@@ -153,7 +153,7 @@ section {
 section a {
   border-bottom: 2px solid #FF3E51;
 }
-p, ul, ol {
+h3, p, ul, ol {
   font-family: 'Fira Sans', sans-serif;
 }
 
@@ -188,15 +188,16 @@ h1 {
 
 h2 {
   position: relative;
-  font-size:  4rem;
+  font-size:  2rem;
   line-height: 1.2;
   text-transform: lowercase;
 
-  margin-top:   2rem;
-  margin-bottom: 2rem;
-
-  border-left: 1rem solid currentcolor;
+  margin-top:   4rem;
+  margin-bottom: 4rem;
   padding: .5rem 1.5rem;
+
+  background-color: #353535;
+  color: white;
 }
 
 h2::before {
@@ -210,6 +211,7 @@ h2::before {
   font-size:  8rem;
   line-height:  1;
   padding-right:  3rem;
+  color: #353535;
 }
 
 
@@ -359,7 +361,7 @@ ul.comment {
   }
 
   .scroll-nav.fixed .scroll-nav__wrapper:not(:hover) {
-    color: #999;
+/*     color: #999; */
   }
 
   .scroll-nav.fixed .scroll-nav__wrapper {
