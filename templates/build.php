@@ -7,6 +7,7 @@
       'web-basics' => '1. Web Basics',
       'content'=> '2. Content',
       'presentation' => '3. Presentation',
+      'layout' => '4. Layout',
       'references' => 'References',
       'formatting' => '- formatting',
     );

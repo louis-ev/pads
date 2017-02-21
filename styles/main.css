@@ -269,9 +269,12 @@ ul.comment {
 
 .text-pre {
   font-family: 'Fira Mono';
-  color: #4BC0B4;
-  background-color: #eee;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #353535;
   border-radius: 3px;
+  border: none;
+  padding: .3rem;
 }
 
 
