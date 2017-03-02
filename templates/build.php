@@ -8,6 +8,7 @@
       'content'=> '2. Content',
       'presentation' => '3. Presentation',
       'layout' => '4. Layout',
+      'patterns' => '5. Patterns',
       'references' => 'References',
       'formatting' => '- formatting',
     );
