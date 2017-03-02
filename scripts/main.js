@@ -10,6 +10,7 @@ document.write = function (str) {
     .replace(/<undefined><li>/g, '<h3>')
     .replace(/<\/li><\/undefined>/g, '</h3>')
     .replace(/&rsquo;/g, '\'')
+    .replace(/<p>---<\/p>/g, '<hr>')
 //     .replace(/--&gt;/g, '→')
     .replace(/\`/gi, function() {
       index++;
@@ -62,7 +63,10 @@ document.write = function (str) {
 
     var blocType = 'lang-html';
     // detect (very vaguely) the langage
-    if(codeBloc.indexOf('{') > -1 && codeBloc.indexOf('}') -1) {
+    if(codeBloc.indexOf('<?php') > -1) {
+      debugger;
+      blocType = 'lang-php';
+    } else if(codeBloc.indexOf('{') > -1 && codeBloc.indexOf('}') -1) {
       blocType = 'lang-css';
     } else if(codeBloc.indexOf('var') > -1) {
       blocType = 'lang-js';
