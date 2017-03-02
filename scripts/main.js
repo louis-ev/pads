@@ -64,7 +64,6 @@ document.write = function (str) {
     var blocType = 'lang-html';
     // detect (very vaguely) the langage
     if(codeBloc.indexOf('<?php') > -1) {
-      debugger;
       blocType = 'lang-php';
     } else if(codeBloc.indexOf('{') > -1 && codeBloc.indexOf('}') -1) {
       blocType = 'lang-css';
