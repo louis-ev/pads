@@ -17,7 +17,8 @@
 	<link rel="icon" type="image/png" href="./favicon.png" />
 
   <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/codepen-embed.css">
+<!--   <link rel="stylesheet" href="styles/codepen-embed.css"> -->
+  <link rel="stylesheet" href="styles/github-gist.css">
   <link rel="stylesheet" href="styles/main.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

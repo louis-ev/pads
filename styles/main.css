@@ -40,14 +40,14 @@ header {
   font-size:  .8em;
 }
 header .path {
-  max-width: 50rem;
-  padding: 1rem;
-  margin: 0 auto;
-
+  max-width: 55rem;
+  padding: 1rem 3rem;
+  margin: 0 auto 4rem;
 }
 
 header a + a::before {
   content: '•';
+  color: #FF3E51;
 }
 
 /************************************************************************
@@ -57,7 +57,6 @@ header a + a::before {
 nav.topNav {
   position: relative;
   width:360px;
-  max-width: 50rem;
   margin: 2rem auto;
   color: white;
 }
@@ -127,6 +126,10 @@ nav.topNav::after {
   height: 100%;
   padding: 12px;
   transition: transform .4s ease-out;
+}
+
+.button_edit {
+  z-index: 1500;
 }
 .button_edit .svg-icon:hover {
   transform:rotate(90deg);
@@ -232,16 +235,23 @@ hr { width: 40%; max-width: 16em; margin: 4em auto; }
 ul.code, code, code.hljs {
   font-family: 'Fira Mono';
   list-style:none;
-  background-color: #353535;
   border: none;
-  border-left: 6px solid #4BC0B4;
-  border-radius: 3px;
+  border-left: 3px solid #4BC0B4;
   font-size: 1rem;
-  color: #fff;
-  padding:1rem;
+
+  padding:1rem 1rem;
+  margin: 2em 0px 2em;
+
+  background-color: #f3f3f3;
+  color:#333333;
+
 }
-
-
+@media screen and (min-width: 70em) {
+  ul.code, code, code.hljs {
+    margin-left:  -150px;
+    margin-right:   -150px;
+  }
+}
 
 .iframeContainer {
   position: relative;
@@ -379,6 +389,11 @@ ul.comment {
     top: 0;
     width: 300px;
     transition: width .6s ease-in-out, right 1s;
+  }
+
+  .scroll-nav__list {
+    max-height: 85vh;
+    overflow: scroll;
   }
 
 }
