@@ -20,7 +20,7 @@ body {
   padding: 0;
   font-family:  'Fira Mono', monospace;
   font-weight: 400;
-  font-size: 125%;
+  font-size: 120%;
   line-height: 1.5;
 }
 
@@ -56,7 +56,7 @@ header a + a::before {
 
 nav.topNav {
   position: relative;
-  width:360px;
+  width:380px;
   margin: 2rem auto;
   color: white;
 }
@@ -169,6 +169,20 @@ li {
   margin-top: .5rem;
   margin-bottom: .5rem;
 }
+
+
+#content ol { counter-reset: item; }
+#content ol li { display: block; position: relative; }
+#content ol li::before {
+  content: counter(item) ". ";
+  counter-increment: item;
+  color: #4691f6;
+  position: absolute;
+  left: -1.3em;
+  font-family: 'Fira Mono', monospace;
+}
+
+
 
 p:empty {
   margin-bottom: 1rem;
