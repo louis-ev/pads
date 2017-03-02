@@ -8,7 +8,7 @@
       'content'=> '2. Content',
       'presentation' => '3. Presentation',
       'layout' => '4. Layout',
-      'multipage_and_CMS' => '5. Dynamic page',
+      'multipage_and_CMS' => '5. Dynamic pages',
       'patterns' => 'Patterns',
       'references' => 'References',
       'formatting' => '- formatting',
