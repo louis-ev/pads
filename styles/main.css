@@ -56,8 +56,9 @@ header a + a::before {
 
 nav.topNav {
   position: relative;
-  width:380px;
+  max-width:480px;
   margin: 2rem auto;
+  padding: 0 3rem;
   color: white;
 }
 
@@ -89,7 +90,7 @@ nav.topNav::after {
   position: absolute;
   font-family:  'Fira Mono';
   top: 0;
-  right: 0;
+  right: 3rem;
   bottom: 0;
   font-size:  2em;
   line-height: 65px;
@@ -170,6 +171,25 @@ li {
   margin-bottom: .5rem;
 }
 
+.dont-break-out {
+
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+
+}
 
 #content ol { counter-reset: item; }
 #content ol li { display: block; position: relative; }
@@ -262,8 +282,10 @@ ul.code, code, code.hljs {
 }
 @media screen and (min-width: 70em) {
   ul.code, code, code.hljs {
-    margin-left:  -150px;
-    margin-right:   -150px;
+/*
+    margin-left:  -50px;
+    margin-right: -50px;
+*/
   }
 }
 
@@ -294,8 +316,8 @@ ul.comment {
 .text-pre {
   font-family: 'Fira Mono';
   font-size: 1rem;
-  color: #fff;
-  background-color: #353535;
+  background-color: #f3f3f3;
+  color: #333333;
   border-radius: 3px;
   border: none;
   padding: .3rem;

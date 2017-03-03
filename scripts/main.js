@@ -12,10 +12,13 @@ document.write = function (str) {
     .replace(/&rsquo;/g, '\'')
     .replace(/<p>---<\/p>/g, '<hr>')
 //     .replace(/--&gt;/g, '→')
-    .replace(/\`/gi, function() {
-      index++;
-      return index % 2 == 0 ? '<span class="text-pre">' : '</span>';
-    }, 'gi')
+    .replace(/\`(.*?)\`/gi, function(e, content) {
+      return '<span class="text-pre">' + content + '</span>';
+    })
+    .replace(/<p>&gt; (.*?)<\/p>/gi, function(e, content) {
+      // find all "> " and turn them into blockquotes
+      return '<blockquote>' + content + '</blockquote>';
+    })
     ;
 
   document.old_write(str);
@@ -49,7 +52,10 @@ document.write = function (str) {
   });
 
   $container.find('a').each(function() {
-    $(this).attr('target', '_blank');
+    $(this)
+      .attr('target', '_blank')
+      .addClass('dont-break-out')
+      ;
   });
 
   $container.find('.comment').remove();
@@ -63,7 +69,7 @@ document.write = function (str) {
 
     var blocType = 'lang-html';
     // detect (very vaguely) the langage
-    if(codeBloc.indexOf('<?php') > -1) {
+    if(codeBloc.indexOf('<?php') > -1 || codeBloc.indexOf('echo ') > -1) {
       blocType = 'lang-php';
     } else if(codeBloc.indexOf('{') > -1 && codeBloc.indexOf('}') -1) {
       blocType = 'lang-css';
