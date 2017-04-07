@@ -9,6 +9,7 @@
       'presentation' => '3.Presentation',
       'layout' => '4.Layout',
       'multipage_and_CMS' => '5.Dynamic pages',
+      'drawing' => '6.Drawing',
       'patterns' => 'Patterns',
       'references' => 'References',
       'formatting' => '- formatting',

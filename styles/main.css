@@ -332,6 +332,25 @@ ul.comment {
 .scroll-nav {
   position: relative;
   font-size:  .8em;
+
+
+  // For Google Chrome
+  ::-webkit-scrollbar {
+      width:  5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: #ccc;
+  }
+
+  ::-webkit-scrollbar-track {
+      background: transparent;
+  }
+
+  // For Internet Explorer
+  scrollbar-face-color: #ccc;
+  scrollbar-track-color: transparent;
+
 }
 
 .scroll-nav__wrapper {
@@ -429,9 +448,8 @@ ul.comment {
 
   .scroll-nav__list {
     max-height: 85vh;
-    overflow: scroll;
+    overflow: auto;
   }
-
 }
 
 @media screen and (min-width: 60em) and (max-width: 90em) {
