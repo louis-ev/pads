@@ -323,6 +323,27 @@ ul.comment {
   padding: .3rem;
 }
 
+table {
+  font-family: 'Fira Mono';
+  list-style: none;
+  border: none;
+  font-size: .9rem !important;
+  line-height: 1.3;
+  padding: 1rem 1rem;
+  margin: 2em 0px 2em;
+  background-color: #f3f3f3;
+  color: #333333;
+}
+
+td {
+  padding: 8px !important;
+  line-height: inherit !important;
+}
+
+tr:first-child {
+  font-weight:  700;
+}
+
 
 /************************************************************************
                       SIDE-NAVIGATION

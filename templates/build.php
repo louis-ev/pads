@@ -8,10 +8,13 @@
       'content'=> '2.Content',
       'presentation' => '3.Presentation',
       'layout' => '4.Layout',
-      'multipage_and_CMS' => '5.Dynamic pages',
-      'drawing' => '6.Drawing',
-      'patterns' => 'Patterns',
-      'references' => 'References',
+      'dynamic_page' => '5.Dynamic pages',
+      'CMS' => '6.CMS',
+      'drawing' => '7.Drawing',
+      'patterns' => '~ layouts',
+      'drawing-patterns' => '~ drawings',
+      'experiments' => '~ experiments',
+      'references' => 'references',
       'formatting' => '- formatting',
     );
   ?>
